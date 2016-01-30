@@ -8,18 +8,6 @@ var app = express();
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
-mongoose.connect('mongodb://localhost/todoSm');
-var TodoSchema = new mongoose.Schema({
-	id: Number,
-	name: String,
-	completed: Boolean,
-	note: String,
-	update_at: {
-		type: Date, default: Date.now
-	},
-});
-
-
 
 var Todo = mongoose.model('Todo', TodoSchema);
 
